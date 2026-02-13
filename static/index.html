@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneGeo Well-Log Interpreter</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>One-Geo.com — Mudlogging Mass Spectrometer</h1>
+
+      <section class="card">
+        <h2>1) Upload LAS</h2>
+        <input type="file" id="lasFile" accept=".las" />
+        <button id="uploadBtn">Upload</button>
+        <p id="uploadStatus"></p>
+      </section>
+
+      <section class="card">
+        <h2>2) Select dataset and curves</h2>
+        <label>Dataset</label>
+        <select id="fileSelect"></select>
+
+        <label>Curves (Ctrl/Cmd for multi-select)</label>
+        <select id="curveSelect" multiple size="8"></select>
+
+        <div class="grid">
+          <div>
+            <label>Start depth</label>
+            <input id="startDepth" type="number" step="0.1" />
+          </div>
+          <div>
+            <label>End depth</label>
+            <input id="endDepth" type="number" step="0.1" />
+          </div>
+        </div>
+
+        <button id="plotBtn">Plot Curves</button>
+        <button id="interpretBtn">AI Interpretation</button>
+      </section>
+
+      <section class="card">
+        <h2>3) Visualization</h2>
+        <div id="plot"></div>
+      </section>
+
+      <section class="card">
+        <h2>4) AI-assisted interpretation</h2>
+        <pre id="interpretation"></pre>
+      </section>
+
+      <section class="card">
+        <h2>5) Chatbot (bonus)</h2>
+        <input id="chatInput" placeholder="Ask about shale, summary, etc." />
+        <button id="chatBtn">Ask</button>
+        <pre id="chatOutput"></pre>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
